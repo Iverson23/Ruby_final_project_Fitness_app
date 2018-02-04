@@ -6,4 +6,8 @@ class HomeController < ApplicationController
   def about
 
   end
+
+  def show
+    @news = News.find(params[:id])
+  end
 end

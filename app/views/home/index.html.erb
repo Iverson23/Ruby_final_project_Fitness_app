@@ -1,1 +1,26 @@
-<h2>Latest news in fitness world</h2>
+<h1 align="center">Latest news and articles in fitness world</h1>
+<br>
+<% @news.each do |n| %>
+    <div class="container">
+      <div class="lead well">
+        <div class="media">
+          <div class="media-left">
+            <img src="<%= n.thumbnail %>" height="250" width="250">
+          </div>
+          <div class="media-body">
+            <h2><%= n.title %></h2>
+            <div>
+              <div>
+                <%= time_ago_in_words n.created_at %> ago
+              </div>
+            </div>
+            <br><br><br>
+            <div align="right">
+              <a href="/news/<%= n.id %>" class="btn btn-info btn-lg ">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+
