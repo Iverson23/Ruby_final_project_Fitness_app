@@ -10,9 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202115119) do
+ActiveRecord::Schema.define(version: 20180204085430) do
+
+  create_table "answers", force: :cascade do |t|
+    t.integer "question_id", null: false
+    t.string "email", null: false
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "excercises", force: :cascade do |t|
+    t.string "muscle_group", null: false
+    t.string "title", null: false
+    t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "excercises_workouts", id: false, force: :cascade do |t|
+    t.integer "excercise_id", null: false
+    t.integer "workout_id", null: false
+    t.index ["excercise_id", "workout_id"], name: "index_excercises_workouts_on_excercise_id_and_workout_id"
+    t.index ["workout_id", "excercise_id"], name: "index_excercises_workouts_on_workout_id_and_excercise_id"
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "email", null: false
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "workouts", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "goal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

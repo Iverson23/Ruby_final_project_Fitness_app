@@ -1,0 +1,25 @@
+<div class="container">
+  <% @questions.each do |q| %>
+      <div class="lead well">
+        <div class="media">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object" src="<%= q.gravatar %>">
+            </a>
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading"><%= q.email %> asked:</h3>
+            <div>
+              <small>
+                <%= time_ago_in_words q.created_at %> ago
+              </small>
+            </div>
+            <%= q.body %>
+            <div>
+              <a href="<%= question_path(q) %>" class="btn btn-success btn-xs">View Answers</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>

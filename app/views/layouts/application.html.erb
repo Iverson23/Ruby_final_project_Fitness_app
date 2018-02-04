@@ -1,93 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FitnessPortal</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>FitnessPortal</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">Fitness Portal</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            Exercises
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="/excercises/legs">Legs</a></li>
-            <li><a href="/excercises/back">Back</a></li>
-            <li><a href="/excercises/chest">Chest</a></li>
-            <li><a href="/excercises/shoulders">Shoulders</a></li>
-            <li><a href="/excercises/biceps">Biceps</a></li>
-            <li><a href="/excercises/triceps">Triceps</a></li>
-            <li><a href="/excercises/abs">Abs</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            Workouts
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="/workouts/fullbody">Full body</a></li>
-            <li><a href="/workouts/split">Split</a></li>
-            <li><a href="/workouts/cardio">Cardio</a></li>
-            <li><a href="/workouts/crossfit">Crossfit</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            Meals
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="/meals/breakfast">Breakfast</a></li>
-            <li><a href="/meals/lunch">Lunch</a></li>
-            <li><a href="/meals/dinner">Dinner</a></li>
-            <li><a href="/meals/snack">Snack</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            Diets
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="/diets/reducing">Fat reduction</a></li>
-            <li><a href="/diets/bulking">Muscle gaining</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            Tabata
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="/tabata/about">About</a></li>
-            <li><a href="/tabata/timer">Timer</a></li>
-          </ul>
-        </li>
-        <li><a href="/forum">Disscusion Forum</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Ask coach</a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="container">
-    <%= yield %>
-  </div>
+<body>
+<%= render 'home/navbar' %>
 
-  </body>
+<div class="container">
+  <%= yield %>
+</div>
+
+<%= render 'questions/ask_question_form' %>
+</body>
 </html>

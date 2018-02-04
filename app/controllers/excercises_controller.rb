@@ -1,22 +1,6 @@
 class ExcercisesController < ApplicationController
-  def legs
-  end
 
-  def chest
-  end
-
-  def abs
-  end
-
-  def back
-  end
-
-  def biceps
-  end
-
-  def triceps
-  end
-
-  def shoulders
+  def show
+    @excercises = Excercise.where(:muscle_group => params[:id])
   end
 end
