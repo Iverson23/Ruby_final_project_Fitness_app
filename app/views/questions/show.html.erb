@@ -20,11 +20,13 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-1">
       <div>
-        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AnswerModal">Submit new
-          answer
-        </button>
+        <% if user_signed_in? && current_user.email == 'tersl.adam@seznam.cz' %>
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AnswerModal">Submit new
+              answer
+            </button>
+            <%= render 'answers/new_answer_form' %>
+        <% end %>
 
-        <%= render 'answers/new_answer_form' %>
         <% @question.answers.each do |a| %>
             <div class="media">
               <div class="media-left">
@@ -33,7 +35,7 @@
                 </a>
               </div>
               <div class="media-body">
-                <h3 class="media-heading"><%= a.email %> answered:</h3>
+                <h3 class="media-heading">Coach <%= a.email %> answered:</h3>
                 <div>
                   <small>
                     <%= time_ago_in_words a.created_at %> ago
