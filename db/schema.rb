@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180204085430) do
+ActiveRecord::Schema.define(version: 20180205075511) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "question_id", null: false
@@ -28,13 +28,6 @@ ActiveRecord::Schema.define(version: 20180204085430) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "excercises_workouts", id: false, force: :cascade do |t|
-    t.integer "excercise_id", null: false
-    t.integer "workout_id", null: false
-    t.index ["excercise_id", "workout_id"], name: "index_excercises_workouts_on_excercise_id_and_workout_id"
-    t.index ["workout_id", "excercise_id"], name: "index_excercises_workouts_on_workout_id_and_excercise_id"
-  end
-
   create_table "news", force: :cascade do |t|
     t.string "title", null: false
     t.text "body", null: false
@@ -49,12 +42,18 @@ ActiveRecord::Schema.define(version: 20180204085430) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "workouts", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "goal"
+  create_table "workout_compositions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "workouts", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "workout_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "rest"
   end
 
 end

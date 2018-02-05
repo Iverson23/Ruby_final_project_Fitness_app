@@ -1,3 +1,0 @@
-class DietsController < ApplicationController
-
-end

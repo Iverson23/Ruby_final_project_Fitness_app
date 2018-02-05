@@ -1,4 +1,8 @@
 class Workout < ApplicationRecord
+  has_many :workout_compositions
+  has_many :excercises, through: :workout_compositions
 
-  has_and_belongs_to_many :excercises
+  def thumbnail
+    "/images/workouts/#{title}.jpg"
+  end
 end
