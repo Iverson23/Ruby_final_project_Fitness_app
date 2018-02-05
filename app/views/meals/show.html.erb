@@ -7,6 +7,11 @@
         <div class="media">
           <div class="media-left media-middle">
             <img  src="<%= m.thumbnail %>" height="400" width="400">
+              <% if current_user %>
+                  <%= rating_for m, "meal", star: 5, disable_after_rate: true %>
+              <% else %>
+                  <%= rating_for m, "meal", star: 5, readonly:true %>
+              <% end %>
           </div>
           <div class="media-body">
             <h2 class="media-heading"><%= m.title %></h2>
