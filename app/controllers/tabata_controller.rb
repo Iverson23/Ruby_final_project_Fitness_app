@@ -1,3 +1,0 @@
-class TabataController < ApplicationController
-
-end

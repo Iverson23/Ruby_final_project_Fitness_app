@@ -45,6 +45,10 @@
               </div>
             </div>
         <% end %>
+
+        <% if @question.answers.empty? %>
+            <div class="alert alert-info">Coach did not answer this question yet, be patient please</div>
+        <% end %>
       </div>
     </div>
   </div>

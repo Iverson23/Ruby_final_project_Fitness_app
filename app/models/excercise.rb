@@ -3,6 +3,6 @@ class Excercise < ApplicationRecord
   has_many :workouts, through: :workout_compositions
 
   def thumbnail
-    "/images/#{muscle_group}/#{title}.jpg"
+    "/images/excercises/#{muscle_group}/#{title}.jpg"
   end
 end

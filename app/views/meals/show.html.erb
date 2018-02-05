@@ -1,0 +1,25 @@
+<dl>
+  <h1 align="center"><%=	 @meals.first.meal_type.capitalize %> meals</h1>
+</dl>
+<div class="container">
+  <% @meals.each do |m| %>
+      <div class="lead well">
+        <div class="media">
+          <div class="media-left media-middle">
+            <img  src="<%= m.thumbnail %>" height="400" width="400">
+          </div>
+          <div class="media-body">
+            <h2 class="media-heading"><%= m.title %></h2>
+            <%= m.calories %> Kcal, <%= m.proteins %> proteins, <%= m.carbs %> carbs, <%= m.fats %> fats
+            <br>
+            Preparation time: <%= m.prep_time %> minutes
+            <h3>Ingredients:</h3>
+            <%= simple_format(m.ingredients) %>
+            <h4>Directions:</h4>
+            <%= simple_format(m.description) %>
+
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
