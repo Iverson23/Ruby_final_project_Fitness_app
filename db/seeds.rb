@@ -64,7 +64,7 @@ Meal.create(title:"15-MINUTE TEX-MEX CHICKEN SALAD", meal_type:"lunch", calories
 Juice of 1 lime
 1/2 tsp chipotle chili powder", description:"1. Preheat oven to 350°F. Place tortillas on a baking tin. When oven is hot, heat tortillas until crispy, 8 to 10 minutes. Prepare corn according to package directions.
 2. Divide spinach, chicken, black beans, tomatoes, avocado, red onion, and cooked corn among serving plates. In a bowl, whisk together sour cream, olive oil, lime juice, chipotle chili powder, and a few pinches of salt.
-3. Break tortillas into 1" pieces and sprinkle over salads. Drizzle sour cream dressing on top.")
+3. Break tortillas into 1 pieces and sprinkle over salads. Drizzle sour cream dressing on top.")
 Meal.create(title:"BAKED JALAPEÑO POPPERS", meal_type:"lunch", calories:"130", proteins:"4", carbs:"6", fats:"10", prep_time:"10", ingredients:"8 oz whipped low-fat cream cheese
 1⁄2 cup shredded sharp cheddar
 1⁄2 tsp garlic powder
