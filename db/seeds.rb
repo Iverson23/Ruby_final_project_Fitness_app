@@ -29,26 +29,6 @@ Choose workout that suits you and follow excersises and rest pauses every time y
 Workout.create(title:"Push-pull split", description:"Split programs are designed for people who are able to hit the gym 4 or more times per week. Unlike fullbody workout, split divides body parts into certain groups based on workout program and you can train them harder. 
 
 Split program consists of mostly two different rutines called A and B, each of these rutines should be done at least twice a week.", workout_type:"split", rest:"60")
-	
-Workout_composition.create(excersice_id:"10", workout_id:"1", sets:"3", reps:"10")
-Workout_composition.create(excersice_id:"4", workout_id:"1", sets:"3", reps:"10")
-Workout_composition.create(excersice_id:"9", workout_id:"1", sets:"3", reps:"15")
-Workout_composition.create(excersice_id:"2", workout_id:"1", sets:"3", reps:"8")
-Workout_composition.create(excersice_id:"10", workout_id:"2", sets:"5", reps:"5")
-Workout_composition.create(excersice_id:"12", workout_id:"2", sets:"3", reps:"10")
-Workout_composition.create(excersice_id:"5", workout_id:"2", sets:"4", reps:"12")
-Workout_composition.create(excersice_id:"6", workout_id:"2", sets:"3", reps:"10")
-Workout_composition.create(excersice_id:"7", workout_id:"2", sets:"3", reps:"15")
-Workout_composition.create(excersice_id:"8", workout_id:"2", sets:"4", reps:"10")
-Workout_composition.create(excersice_id:"3", workout_id:"2", sets:"5", reps:"15")
-Workout_composition.create(excersice_id:"10", workout_id:"3", sets:"5", reps:"10")
-Workout_composition.create(excersice_id:"11", workout_id:"3", sets:"5", reps:"12")
-Workout_composition.create(excersice_id:"8", workout_id:"3", sets:"4", reps:"15")
-Workout_composition.create(excersice_id:"9", workout_id:"3", sets:"4", reps:"10")
-Workout_composition.create(excersice_id:"12", workout_id:"3", sets:"5", reps:"15")
-Workout_composition.create(excersice_id:"7", workout_id:"3", sets:"5", reps:"10")
-Workout_composition.create(excersice_id:"6", workout_id:"3", sets:"4", reps:"15")
-Workout_composition.create(excersice_id:"3", workout_id:"3", sets:"5", reps:"15")
 
 
 Meal.create(title:"15-MINUTE TEX-MEX CHICKEN SALAD", meal_type:"lunch", calories:"536", proteins:"36", carbs:"52", fats:"23", prep_time:"15", ingredients:"4 corn tortillas
@@ -290,3 +270,23 @@ News.create(title:"Is walking 10,000 steps a day really good for you", body:"Is 
                                                                                                                                   In addition to the proven health benefits of incorporating a more intense form of physical activity in your daily routine, the participants also found it easier finding the time to do three 10-minute walks than trying to reach a total of 10,000 steps.
 
                                                                                                                                       So, if you sit at a desk all day and find the prospect of trying to reach 10,000 steps incredibly daunting, going for a quick walk at lunchtime and after work may be your solution.")
+
+Workout_composition.create(excersice_id:"10", workout_id:"1", sets:"3", reps:"10")
+Workout_composition.create(excersice_id:"4", workout_id:"1", sets:"3", reps:"10")
+Workout_composition.create(excersice_id:"9", workout_id:"1", sets:"3", reps:"15")
+Workout_composition.create(excersice_id:"2", workout_id:"1", sets:"3", reps:"8")
+Workout_composition.create(excersice_id:"10", workout_id:"2", sets:"5", reps:"5")
+Workout_composition.create(excersice_id:"12", workout_id:"2", sets:"3", reps:"10")
+Workout_composition.create(excersice_id:"5", workout_id:"2", sets:"4", reps:"12")
+Workout_composition.create(excersice_id:"6", workout_id:"2", sets:"3", reps:"10")
+Workout_composition.create(excersice_id:"7", workout_id:"2", sets:"3", reps:"15")
+Workout_composition.create(excersice_id:"8", workout_id:"2", sets:"4", reps:"10")
+Workout_composition.create(excersice_id:"3", workout_id:"2", sets:"5", reps:"15")
+Workout_composition.create(excersice_id:"10", workout_id:"3", sets:"5", reps:"10")
+Workout_composition.create(excersice_id:"11", workout_id:"3", sets:"5", reps:"12")
+Workout_composition.create(excersice_id:"8", workout_id:"3", sets:"4", reps:"15")
+Workout_composition.create(excersice_id:"9", workout_id:"3", sets:"4", reps:"10")
+Workout_composition.create(excersice_id:"12", workout_id:"3", sets:"5", reps:"15")
+Workout_composition.create(excersice_id:"7", workout_id:"3", sets:"5", reps:"10")
+Workout_composition.create(excersice_id:"6", workout_id:"3", sets:"4", reps:"15")
+Workout_composition.create(excersice_id:"3", workout_id:"3", sets:"5", reps:"15")
