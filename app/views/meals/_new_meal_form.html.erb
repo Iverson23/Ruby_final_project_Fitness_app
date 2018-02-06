@@ -1,0 +1,73 @@
+<div id="NewMealModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">New meal</h4>
+      </div>
+      <%= form_for :meal, url: '/meals', html: {class: 'form-horizontal'} do %>
+          <div class="modal-body">
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="meal_type">Meal Type</label>
+              <div class="col-sm-10">
+                <input type="text" name="meal[meal_type]" class="form-control" id="meal_type" placeholder="Meal type" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="title">Title</label>
+              <div class="col-sm-10">
+                <input type="text" name="meal[title]" class="form-control" id="title" placeholder="excersice" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="description">Description</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" name="meal[description]" id="description" placeholder="excercise description" required></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="ingredients">Ingredients</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" name="meal[ingredients]" id="ingredients" placeholder="Needed ingredients" required></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="time">Preparation time</label>
+              <div class="col-sm-10">
+                <input type="number" name="meal[prep_time]" class="form-control" id="time" placeholder="preparation time in minutes" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="cal">Calories</label>
+              <div class="col-sm-10">
+                <input type="number" name="meal[calories]" class="form-control" id="cal" placeholder="kcal" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="p">Proteins</label>
+              <div class="col-sm-10">
+                <input type="number" name="meal[proteins]" class="form-control" id="p" placeholder="proteins" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="c">Carbs</label>
+              <div class="col-sm-10">
+                <input type="number" name="meal[carbs]" class="form-control" id="c" placeholder="carbs" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="f">Fats</label>
+              <div class="col-sm-10">
+                <input type="number" name="meal[fats]" class="form-control" id="f" placeholder="fats" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

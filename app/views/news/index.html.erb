@@ -1,5 +1,11 @@
 <h1 align="center">Latest news and articles in fitness world</h1>
 <br>
+  <% if user_signed_in? && current_user.email == 'tersl.adam@seznam.cz' %>
+      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#NewNewsModal">Add news
+      </button>
+
+      <%= render 'new_news_form' %>
+  <% end %>
 <% @news.each do |n| %>
     <div class="container">
       <div class="lead well">

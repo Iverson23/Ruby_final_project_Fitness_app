@@ -1,7 +1,16 @@
-<dl>
-<h1 align="center"><%=	 @excercises.first.muscle_group.capitalize %> excercises</h1>
-</dl>
+<% unless @excercises.empty? %>
+    <dl>
+      <h1 align="center"><%= @excercises.first.muscle_group.capitalize %> excercises</h1>
+    </dl>
+<% end %>
 <div class="container">
+  <% if user_signed_in? && current_user.email == 'tersl.adam@seznam.cz' %>
+      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#NewExcerciseModal">Add new
+        excercise
+      </button>
+
+      <%= render 'new_excercise_form' %>
+  <% end %>
   <% @excercises.each do |e| %>
       <div class="lead well">
         <div class="media">
@@ -9,7 +18,7 @@
             <img src="<%= e.thumbnail %>" height="400" width="400">
           </div>
           <div class="media-body">
-              <h2 class="media-heading"><%= e.title %></h2>
+            <h2 class="media-heading"><%= e.title %></h2>
             <%= e.description %>
           </div>
         </div>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :excercises
   resources :answers
   resources :questions
+  resources :news
 
   root 'home#index'
 

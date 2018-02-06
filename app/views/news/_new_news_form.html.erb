@@ -1,0 +1,31 @@
+<div id="NewNewsModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">News</h4>
+      </div>
+      <%= form_for :news, url: '/news', html: {class: 'form-horizontal'} do %>
+          <div class="modal-body">
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="title">Title</label>
+              <div class="col-sm-10">
+                <input type="text" name="news[title]" class="form-control" id="title" placeholder="title" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="description">Description</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" name="news[body]" id="description" placeholder="news" required></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

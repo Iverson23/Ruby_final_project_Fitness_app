@@ -1,7 +1,16 @@
-<dl>
-  <h1 align="center"><%=	 @meals.first.meal_type.capitalize %> meals</h1>
-</dl>
+<% unless @meals.empty? %>
+    <dl>
+      <h1 align="center"><%=	 @meals.first.meal_type.capitalize %> meals</h1>
+    </dl>
+<% end %>
 <div class="container">
+  <% if user_signed_in? && current_user.email == 'tersl.adam@seznam.cz' %>
+      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#NewMealModal">Add new
+        meal
+      </button>
+
+      <%= render 'new_meal_form' %>
+  <% end %>
   <% @meals.each do |m| %>
       <div class="lead well">
         <div class="media">
