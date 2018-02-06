@@ -273,7 +273,6 @@ News.create(title:"Is walking 10,000 steps a day really good for you", body:"Is 
 																																	  
 																																	  
 
-INSERT INTO workout_compositions (id, excercise_id, workout_id, sets, reps) VALUES (1, 10, 1, 3, 10);
 
 Workout_composition.create(excercise_id:"10", workout_id:"1", sets:"3", reps:"10")
 Workout_composition.create(excercise_id:"4", workout_id:"1", sets:"3", reps:"10")
