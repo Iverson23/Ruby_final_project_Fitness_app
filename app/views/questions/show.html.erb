@@ -21,27 +21,33 @@
     <div class="col-sm-8 col-sm-offset-1">
       <div>
         <% if user_signed_in? && current_user.email == 'tersl.adam@seznam.cz' %>
-            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AnswerModal">Submit new
-              answer
-            </button>
+            <div>
+              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#AnswerModal">Submit
+                new
+                answer
+              </button>
+            </div>
             <%= render 'answers/new_answer_form' %>
+            <br>
         <% end %>
 
         <% @question.answers.each do |a| %>
-            <div class="media">
-              <div class="media-left">
-                <a href="#">
-                  <img class="media-object" src="<%= a.gravatar %>">
-                </a>
-              </div>
-              <div class="media-body">
-                <h3 class="media-heading">Coach <%= a.email %> answered:</h3>
-                <div>
-                  <small>
-                    <%= time_ago_in_words a.created_at %> ago
-                  </small>
+            <div class="lead well">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object" src="<%= a.gravatar %>">
+                  </a>
                 </div>
-                <%= a.body %>
+                <div class="media-body">
+                  <h3 class="media-heading">Coach <%= a.email %> answered:</h3>
+                  <div>
+                    <small>
+                      <%= time_ago_in_words a.created_at %> ago
+                    </small>
+                  </div>
+                  <%= a.body %>
+                </div>
               </div>
             </div>
         <% end %>
@@ -52,4 +58,4 @@
       </div>
     </div>
   </div>
-
+</div>

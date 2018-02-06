@@ -1,5 +1,5 @@
 class MainMailer < ApplicationMailer
-
+  default from: 'coachtersladam@gmail.com'
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -9,6 +9,6 @@ class MainMailer < ApplicationMailer
     @greeting = "Hello"
     @answer = answer
 
-    mail to: answer.question.email, from: answer.email
+    mail to: answer.question.email
   end
 end

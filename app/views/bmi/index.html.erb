@@ -24,8 +24,38 @@
             <% else %>
                 <h3 class="text-muted">Calculated BMI</h3>
             <% end %>
-
-            <input type="submit" name="Calculate" value="Calculate" />
+            <div>
+              <input type="submit" name="Calculate" value="Calculate"/>
+            </div>
+            <br>
+            <div>
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th class="text-center">BMI</th>
+                  <th class="text-center">Category</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><=18.5</td>
+                  <td>Underweight</td>
+                </tr>
+                <tr>
+                  <td>18.6 - 24.9</td>
+                  <td>Normal weight</td>
+                </tr>
+                <tr>
+                  <td>25 - 29.9</td>
+                  <td>Overweight</td>
+                </tr>
+                <tr>
+                  <td>>=30</td>
+                  <td>Obesity</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
         <% end %>
       </div>
 

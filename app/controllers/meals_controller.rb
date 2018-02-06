@@ -6,6 +6,10 @@ class MealsController < ApplicationController
 
   def create
     Meal.create(meal_params)
+    picture = params[:meal][:picture]
+    File.open(Rails.root.join('public', 'images', 'meals', meal_params[:meal_type], "#{meal_params[:title]}.jpg"), 'wb') do |file|
+      file.write(picture.read)
+    end
     redirect_to "/meals/#{meal_params[:meal_type]}"
   end
 

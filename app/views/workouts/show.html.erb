@@ -3,7 +3,7 @@
 </dl>
 <div class="jumbotron">
   <h3>
-    <%= simple_format(@workouts.first.description) %>
+    <%= @workouts.first.description %>
   </h3>
 </div>
 <br>
@@ -16,7 +16,7 @@
             <img src="<%= w.thumbnail %>" height="200" width="300">
           </div>
           <div class="media-body">
-            <div class="main col-lg-12 myHalfCol">
+            <div class="main col-lg-15 myHalfCol">
               <div class="col-lg-6">
                 <h3 class="media-heading"><%= w.title %></h3>
               </div>

@@ -1,26 +1,28 @@
 <% unless @meals.empty? %>
     <dl>
-      <h1 align="center"><%=	 @meals.first.meal_type.capitalize %> meals</h1>
+      <h1 align="center"><%= @meals.first.meal_type.capitalize %> meals</h1>
     </dl>
 <% end %>
 <div class="container">
   <% if user_signed_in? && current_user.email == 'tersl.adam@seznam.cz' %>
-      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#NewMealModal">Add new
-        meal
-      </button>
-
+      <div>
+        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#NewMealModal">Add new
+          meal
+        </button>
+      </div>
       <%= render 'new_meal_form' %>
+      <br>
   <% end %>
   <% @meals.each do |m| %>
       <div class="lead well">
         <div class="media">
           <div class="media-left media-middle">
-            <img  src="<%= m.thumbnail %>" height="400" width="400">
-              <% if current_user %>
-                  <%= rating_for m, "meal", star: 5, star_path: '/images/ratyrate', disable_after_rate: true %>
-              <% else %>
-                  <%= rating_for m, "meal", star: 5, star_path: '/images/ratyrate', readonly:true %>
-              <% end %>
+            <img src="<%= m.thumbnail %>" height="400" width="400">
+            <% if current_user %>
+                <%= rating_for m, "meal", star: 5, star_path: '/images/ratyrate', disable_after_rate: true %>
+            <% else %>
+                <%= rating_for m, "meal", star: 5, star_path: '/images/ratyrate', readonly: true %>
+            <% end %>
           </div>
           <div class="media-body">
             <h2 class="media-heading"><%= m.title %></h2>
