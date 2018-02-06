@@ -270,6 +270,10 @@ News.create(title:"Is walking 10,000 steps a day really good for you", body:"Is 
                                                                                                                                   In addition to the proven health benefits of incorporating a more intense form of physical activity in your daily routine, the participants also found it easier finding the time to do three 10-minute walks than trying to reach a total of 10,000 steps.
 
                                                                                                                                       So, if you sit at a desk all day and find the prospect of trying to reach 10,000 steps incredibly daunting, going for a quick walk at lunchtime and after work may be your solution.")
+																																	  
+																																	  
+
+INSERT INTO workout_compositions (excersice_id, workout_id, sets, reps) VALUES (10, 1, 3, 10)
 
 Workout_composition.create(excersice_id:"10", workout_id:"1", sets:"3", reps:"10")
 Workout_composition.create(excersice_id:"4", workout_id:"1", sets:"3", reps:"10")
