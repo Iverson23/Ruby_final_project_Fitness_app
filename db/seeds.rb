@@ -1,10 +1,105 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+Excercise.create(muscle_group:"abs", title:"Arms-High Partial Situp", description:"Lie on your back, knees bent 90°, and raise your arms straight overhead, keeping them pointing upward throughout the exercise. Sit up halfway, and then return to the floor.")
+Excercise.create(muscle_group:"abs", title:"Barbell Rollout", description:"Load the bar with 10-lb plates and kneel on the floor behind it. Your shoulders should be over the bar. Brace your abs and roll the bar forward, reaching in front of you until you feel your hips are about to sag. Roll yourself back.")
+Excercise.create(muscle_group:"abs", title:"Barbell Russian Twist", description:"Grasp the bar near the very end again—this time with both hands. Stand with feet shoulder-width. Swing the bar to your left, pivoting your feet as needed, and then swing to your right.")
+Excercise.create(muscle_group:"back", title:"Seated Cable Row", description:"The seated cable row is a staple exercise for a strong, wide back. It hammers your trapezius, which gives your back the width and thickness that characterizes strength and power.")
+Excercise.create(muscle_group:"back", title:"30-Degree Lat Pulldown", description:"While the cable pulldown is a fantastic exercise to build wide lats, an easy tweak turns this move into a great shoulder-friendly exercise that pounds the muscles in your middle and lower trapezius.")
+Excercise.create(muscle_group:"back", title:"Face Pull", description:"Facepulls are a phenomenal exercise to attack poor posture, put your shoulders in a healthier position, and reduce upper-body injuries. Regardless of your strength level or exercise history, every guy needs face pulls to counteract all the time we spend with our arms in front of us—on a computer, at a desk, in the car, etc.")
+Excercise.create(muscle_group:"chest", title:"Dumbbell Flyes", description:"Another reliable chest standby, and with good reason—few moves work the pecs as well. Lying supine on a flat bench, hold a pair of dumbbells over your chest with elbows slightly bent, palms facing each other. Separate the hands and lower the dumbbells to the sides until you feel a stretch in your chest. At the bottom of the movement, your palms should be facing the ceiling. Reverse the motion until you reach the starting point, a movement some liken to “hugging a barrel.” Admittedly, this is more of a push movement, so take a short 30-second break after dips if needed.")
+Excercise.create(muscle_group:"chest", title:"Dips", description:"So basic yet so effective because you’re lifting your entire bodyweight, dips put your triceps on a much heavier load than a typical isolation exercise. Lift yourself up on parallel bars with torso staying perpendicular to the ground. Maintain this posture throughout.")
+Excercise.create(muscle_group:"chest", title:"Dowel Rod Pushups", description:"Place a broom handle, dowel, or PVC pipe along your spine and see how much more challenging the traditional pushup becomes. Not only does this force you to use proper form, it requires you to stay focused and engaged. Do a set of 20.")
+Excercise.create(muscle_group:"legs", title:"Squat", description:"If you don’t have the squat in your program you don’t know squat about leg training. Squats have been the go-to for leg development for bodybuilders like Ronnie Coleman and Tom Platz as well as the who’s who for strength athletes for strength development. Squat with a full range of motion and go heavy, regardless if it is a single repetition or 20. Bring the intensity and train a variety of rep ranges. Strength Coach Mark Rippetoe best sums up the importance of squats and why they work your legs to exhaustion, “There is simply no other exercise, and certainly no machine, that provides the level of central nervous activity, improved balance and coordination, skeletal loading and bone density enhancement, muscular stimulation and growth, connective tissue stress and strength, psychological demand and toughness, and overall systemic conditioning than the correctly performed full squat.”")
+Excercise.create(muscle_group:"legs", title:"Walking Lunge", description:"Walking lunges were a favorite of eight-time Mr. Olympia, Ronnie Coleman.
+
+    In Ronnie Coleman’s prime, he did walking lunges with 405 pounds for a 50-yard lunge! Quoting Brian Dobson, “The walking lunge has now become standard for upper leg separation and glute/ham tie-in.” Lunge variations not only assist in total leg development but also strengthen the core and increase stability in heavy squatting.")
+Excercise.create(muscle_group:"legs", title:"Leg Curl", description:"The hamstrings are responsible for knee flexion (bending) and assist in hip extension.
+
+    For full hamstring development, both functions must be worked. Leg curls may not seem “functional” but they certainly overload knee flexion.
+
+    There is nothing “sexy” about leg curls but let’s forget about what’s new and concentrate on what’s a necessity to build great hamstrings.
+
+    Hamstrings are primarily made up of fast-twitch muscle fibers, so primarily keep reps eight or fewer and go heavy!  Occasionally, do throw in high-rep sets so no stone is left unturned.")
+
+Workout.create(title:"Fullbody workout for begginers", description:"Fullbody workout trains every single part of your body in every training. This type of training is good for people who can go to gym only 3 or less times per week and for begginers. 
+
+Choose workout that suits you and follow excersises and rest pauses every time you hit the gym. Do not forget to push yourself every time a little bit more so you keep progressing and add more weight to each excersice during the program.", workout_type:"fullbody", rest:"90")
+Workout.create(title:"Advanced fullbody workout", description:"Fullbody workout trains every single part of your body in every training. This type of training is good for people who can go to gym only 3 or less times per week and for begginers. 
+
+Choose workout that suits you and follow excersises and rest pauses every time you hit the gym. Do not forget to push yourself every time a little bit more so you keep progressing and add more weight to each excersice during the program.", workout_type:"fullbody", rest:"60")
+Workout.create(title:"Push-pull split", description:"Split programs are designed for people who are able to hit the gym 4 or more times per week. Unlike fullbody workout, split divides body parts into certain groups based on workout program and you can train them harder. 
+
+Split program consists of mostly two different rutines called A and B, each of these rutines should be done at least twice a week.", workout_type:"split", rest:"60")
+	
+workout_composition.create(excersice_id:"10", workout_id:"1", sets:"3", reps:"10")
+workout_composition.create(excersice_id:"4", workout_id:"1", sets:"3", reps:"10")
+workout_composition.create(excersice_id:"9", workout_id:"1", sets:"3", reps:"15")
+workout_composition.create(excersice_id:"2", workout_id:"1", sets:"3", reps:"8")
+workout_composition.create(excersice_id:"10", workout_id:"2", sets:"5", reps:"5")
+workout_composition.create(excersice_id:"12", workout_id:"2", sets:"3", reps:"10")
+workout_composition.create(excersice_id:"5", workout_id:"2", sets:"4", reps:"12")
+workout_composition.create(excersice_id:"6", workout_id:"2", sets:"3", reps:"10")
+workout_composition.create(excersice_id:"7", workout_id:"2", sets:"3", reps:"15")
+workout_composition.create(excersice_id:"8", workout_id:"2", sets:"4", reps:"10")
+workout_composition.create(excersice_id:"3", workout_id:"2", sets:"5", reps:"15")
+workout_composition.create(excersice_id:"10", workout_id:"3", sets:"5", reps:"10")
+workout_composition.create(excersice_id:"11", workout_id:"3", sets:"5", reps:"12")
+workout_composition.create(excersice_id:"8", workout_id:"3", sets:"4", reps:"15")
+workout_composition.create(excersice_id:"9", workout_id:"3", sets:"4", reps:"10")
+workout_composition.create(excersice_id:"12", workout_id:"3", sets:"5", reps:"15")
+workout_composition.create(excersice_id:"7", workout_id:"3", sets:"5", reps:"10")
+workout_composition.create(excersice_id:"6", workout_id:"3", sets:"4", reps:"15")
+workout_composition.create(excersice_id:"3", workout_id:"3", sets:"5", reps:"15")
+
+
+Meal.create(title:"15-MINUTE TEX-MEX CHICKEN SALAD", meal_type:"lunch", calories:"536", proteins:"36", carbs:"52", fats:"23", prep_time:"15", ingredients:"4 corn tortillas
+2 cups frozen corn
+8 cups bagged fresh spinach
+2 cups sliced rotisserie chicken
+1 (14 oz) can black beans, drained
+1 pint cherry tomatoes, halved
+1 avocado, sliced
+1 cup thinly sliced red onion
+1/2 cup light sour cream
+2 tbsp olive oil
+Juice of 1 lime
+1/2 tsp chipotle chili powder", description:"1. Preheat oven to 350°F. Place tortillas on a baking tin. When oven is hot, heat tortillas until crispy, 8 to 10 minutes. Prepare corn according to package directions.
+2. Divide spinach, chicken, black beans, tomatoes, avocado, red onion, and cooked corn among serving plates. In a bowl, whisk together sour cream, olive oil, lime juice, chipotle chili powder, and a few pinches of salt.
+3. Break tortillas into 1" pieces and sprinkle over salads. Drizzle sour cream dressing on top.")
+Meal.create(title:"BAKED JALAPEÑO POPPERS", meal_type:"lunch", calories:"130", proteins:"4", carbs:"6", fats:"10", prep_time:"10", ingredients:"8 oz whipped low-fat cream cheese
+1⁄2 cup shredded sharp cheddar
+1⁄2 tsp garlic powder
+1⁄4 tsp onion powder
+Salt and pepper, to taste
+10 jalapeños, halved lengthwise, seeds removed
+1⁄2 cup panko breadcrumbs", description:"1. Preheat oven to 325°. Line a baking sheet with parchment paper; set aside.
+2. In a medium bowl,stir together cream cheese, cheddar, garlic powder, onion powder, salt, and pepper.
+3. Spoon filling into each jalapeño cavity. Then top jalapeños with a sprinkle of panko crumbs. Place peppers on baking sheet, cavity-side up. Lightly spray peppers with cooking spray. Bake until filling is melted and panko crumbs are golden, 15 to 20 minutes. Remove from oven and serve immediately.")
+Meal.create(title:"CHOCOLATE PUMPKIN PIE PUDDING", meal_type:"breakfast", calories:"186", proteins:"19", carbs:"6", fats:"13", prep_time:"10", ingredients:"2 cups plain 2% Greek or Skyr yogurt
+1 cup canned pumpkin puree (not pumpkin pie filling)
+2 scoops chocolate protein powder
+2 tbsp chocolate nut butter, such as Justin’s or Nuttzo
+2 tbsp maple syrup (optional)
+2 tsp pumpkin pie spice
+2 tsp orange zest
+1 tsp vanilla extract
+¼ tsp salt", description:"1. In a blender, blend together all ingredients. Chill mixture for at least 2 hours.
+2. To serve, place pudding in serving bowls and garnish as you like.")
+Meal.create(title:"SAVORY BREAKFAST SKILLET", meal_type:"breakfast", calories:"401", proteins:"43", carbs:"13", fats:"28", prep_time:"15", ingredients:"1 sweet apple chicken sausage, diced
+1 cup cubed sweet potato
+1 tsp olive oil
+1/2 cup sliced baby portobello mushrooms
+1/3 cup diced red bell pepper
+1/3 cup thinly sliced Vidalia onion
+1/2 tsp smoked paprika
+1/4 tsp cayenne pepper
+1/2 tsp garlic powder
+Sea salt and black pepper
+3 eggs", description:"1. Heat oven to 400°F.
+2. Place a cast-iron skillet on medium-low heat and add sausage. Sauté for about 10 minutes to allow fat to develop.
+3. Add sweet potato and sauté for another 10 minutes, stirring occasionally until potatoes become tender and brown on edges. If pan is too dry, add olive oil. Add mushrooms, red pepper, onion, and spices and stir to combine.
+4. Make 3 holes in the vegetable mixture, crack an egg into each hole, and transfer skillet to oven. Bake for 5 to 10 minutes, depending on how runny you like your egg yolks.")
+	
+
 
 News.create(title:"Static exercises could help prevent runners' chronic back pain", body:"A new study which examines the causes of chronic back pain in runners has revealed the exercises which could help prevent it.
 
@@ -78,6 +173,8 @@ Start with small changes: Setting yourself one thing to change each week is much
 Virgin Active is offering twelve-month membership with nothing to pay until February including no joining fee, valid until Wednesday 17th January.
 
     The #NoExcuses online offer grants new members nationwide access to Virgin Active’s revolutionary gym floor, up to 120 innovative classes per week, pool, steam and sauna facilities.")
+
+
 News.create(title:"How often you need to exercise to see results", body:"If you've renewed your commitment to getting fit now that January has arrived, you may be wondering how much time that goal will require.
 
 For your workouts to produce real results, exercise has to be a regular habit, Chris Jordan, the exercise physiologist who came up with the seven-minute workout, told Business Insider.
