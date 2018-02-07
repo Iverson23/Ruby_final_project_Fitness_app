@@ -19,6 +19,11 @@
             <div>
               <a href="<%= question_path(q) %>" class="btn btn-success btn-xs">View Answers</a>
             </div>
+            <% if user_signed_in? && current_user.email == 'tersl.adam@seznam.cz' %>
+                <div>
+                  <button class="btn btn-warning btn-xs"><%= link_to 'Destroy', q, method: :delete, data: {confirm: 'Are you sure?'} %></button>
+                </div>
+            <% end %>
           </div>
         </div>
       </div>
