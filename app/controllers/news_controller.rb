@@ -10,9 +10,11 @@ class NewsController < ApplicationController
 
   def create
     news = News.create(news_params)
-    picture = params[:news][:picture]
-    File.open(Rails.root.join('public', 'images', 'news', "#{news_params[:title]}.jpg"), 'wb') do |file|
-      file.write(picture.read)
+    if picture
+      picture = params[:news][:picture]
+      File.open(Rails.root.join('public', 'images', 'news', "#{news_params[:title]}.jpg"), 'wb') do |file|
+        file.write(picture.read)
+      end
     end
     redirect_to news
   end

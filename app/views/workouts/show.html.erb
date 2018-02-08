@@ -9,11 +9,25 @@
 <br>
 
 <div class="container">
+  <% if user_signed_in? && current_user.email == 'tersl.adam@seznam.cz' %>
+      <div>
+        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#NewWorkoutModal">Add new
+          workout
+        </button>
+      </div>
+      <%= render 'new_workout_form' %>
+      <br>
+  <% end %>
   <% @workouts.each do |w| %>
       <div class="lead well">
         <div class="media">
           <div class="media-left media-middle">
             <img src="<%= w.thumbnail %>" height="200" width="300">
+            <% if current_user %>
+                <%= rating_for w, "workout", star: 5, star_path: '/images/ratyrate', disable_after_rate: true %>
+            <% else %>
+                <%= rating_for w, "workout", star: 5, star_path: '/images/ratyrate', readonly: true %>
+            <% end %>
           </div>
           <div class="media-body">
             <div class="main col-lg-15 myHalfCol">
@@ -62,6 +76,44 @@
                     </div>
                 <% end %>
             <% end %>
+            <div>
+              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#NewExModal">Add excercise</button>
+            </div>
+            <div id="NewExModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New excercise in this workout</h4>
+                  </div>
+                  <%= form_for :comp, url: '/workouts/addex', html: {class: 'form-horizontal'} do %>
+                      <div class="modal-body">
+                        <div class="form-group">
+                          <div class="col-sm-6">
+                            <select name="comp[excercise_id]" class="form-control" id="ex" placeholder="excercise">
+                              <% @excercises.each do |e| %>
+                                  <option value="<%= e.id %>"><%= e.title %></option>
+                              <% end %>
+                            </select>
+                            <input type="hidden" name="comp[workout_id]" class="form-control" value="<%=	 w.id %>">
+                          </div>
+                          <div class="col-sm-2">
+                            <input type="number" name="comp[sets]" class="form-control" id="sets" placeholder="sets" required>
+                          </div>
+                          <div class="col-sm-2">
+                            <input type="number" name="comp[reps]" class="form-control" id="reps" placeholder="reps" required>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

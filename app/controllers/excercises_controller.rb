@@ -7,8 +7,11 @@ class ExcercisesController < ApplicationController
   def create
     Excercise.create(ex_params)
     picture = params[:excercise][:picture]
-    File.open(Rails.root.join('public', 'images', 'excercises', ex_params[:muscle_group], "#{ex_params[:title]}.jpg"), 'wb') do |file|
-      file.write(picture.read)
+
+    if picture
+      File.open(Rails.root.join('public', 'images', 'excercises', ex_params[:muscle_group], "#{ex_params[:title]}.jpg"), 'wb') do |file|
+        file.write(picture.read)
+      end
     end
     redirect_to "/excercises/#{ex_params[:muscle_group]}"
   end

@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get '/bmi' => 'bmi#index'
   get '/news/:id' => 'home#show'
   post '/bmi/calculate' => 'bmi#calculate'
+  post 'workouts/addex' => 'workouts#add_excercise'
 end

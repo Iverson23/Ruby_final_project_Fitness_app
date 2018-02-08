@@ -18,6 +18,11 @@
         <div class="media">
           <div class="media-left media-middle">
             <img src="<%= e.thumbnail %>" height="280" width="350">
+            <% if current_user %>
+                <%= rating_for e, "excercise", star: 5, star_path: '/images/ratyrate', disable_after_rate: true %>
+            <% else %>
+                <%= rating_for e, "excercise", star: 5, star_path: '/images/ratyrate', readonly: true %>
+            <% end %>
           </div>
           <div class="media-body">
             <h2 class="media-heading"><%= e.title %></h2>
