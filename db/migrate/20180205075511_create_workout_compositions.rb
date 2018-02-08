@@ -6,6 +6,7 @@ class CreateWorkoutCompositions < ActiveRecord::Migration[5.1]
       t.integer :sets
       t.integer :reps
       t.string :group
+
       t.timestamps
     end
   end
