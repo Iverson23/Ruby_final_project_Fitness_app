@@ -27,7 +27,7 @@ class WorkoutsController < ApplicationController
   private
 
   def w_params
-    params.require(:workout).permit(:workout_type, :title, :rest, :picture)
+    params.require(:workout).permit(:workout_type, :title, :rest)
   end
 
   def comp_params
