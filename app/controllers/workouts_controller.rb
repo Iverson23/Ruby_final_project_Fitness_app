@@ -10,7 +10,7 @@ class WorkoutsController < ApplicationController
     picture = params[:workout][:picture]
 
     if picture
-      File.open(Rails.root.join('public', 'images', 'workouts', w_params[:workout_type], "#{w_params[:title]}.jpg"), 'wb') do |file|
+      File.open(Rails.root.join('public', 'images', 'workouts', "#{w_params[:title]}.jpg"), 'wb') do |file|
         file.write(picture.read)
       end
     end
