@@ -31,6 +31,6 @@ class WorkoutsController < ApplicationController
   end
 
   def comp_params
-    params.require(:comp).permit( :excercise_id, :workout_id, :sets, :reps)
+    params.require(:comp).permit( :excercise_id, :workout_id, :sets, :reps, :group)
   end
 end
